@@ -1,7 +1,6 @@
 package chess;
 
 import boardgame.Board;
-import boardgame.BoardException;
 import boardgame.Piece;
 import boardgame.Position;
 import chess.pieces.King;
@@ -9,12 +8,24 @@ import chess.pieces.Rook;
 
 public class ChessMatch {
 	private Board board;
+	private int turn;
+	private EColor currentPlayer;
 	
 	public ChessMatch() {
 		board = new Board(8,8);
+		turn = 1;
+		currentPlayer = EColor.WHITE;
 		initSetup();
 	}
 	
+	public int getTurn() {
+		return turn;
+	}
+
+	public EColor getCurrentPlayer() {
+		return currentPlayer;
+	}
+
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] matriz = new ChessPiece[board.getRows()][board.getColumns()];
 		
@@ -45,7 +56,7 @@ public class ChessMatch {
 		validateTargetPosition(source, target);
 		
 		Piece capturedPiece = makeMove(source, target);
-		
+		nextTurn();
 		return (ChessPiece)capturedPiece;
 	}
 	
@@ -66,11 +77,20 @@ public class ChessMatch {
 
 	private void validateSourcePosition(Position source) {
 		if(!board.thereIsAPiece(source)) {
-			throw new BoardException("There is no piece on source position.");
+			throw new ChessException("There is no piece on source position.");
 		}
+		if(currentPlayer != ((ChessPiece)board.piece(source)).getColor()) {
+			throw new ChessException("The chosen piece is not yours.");
+		}
+		
 		if(!board.piece(source).isThereAnyPossibleMove()) {
 			throw new ChessException("There is no possible moves for the chosen piece.");
 		}
+	}
+	
+	private void nextTurn() {
+		turn++;
+		currentPlayer = (currentPlayer == EColor.WHITE) ? currentPlayer.BLACK : currentPlayer.WHITE;
 	}
 
 	private void initSetup() {
