@@ -13,9 +13,6 @@ public abstract class ChessPiece extends Piece{
 		this.color = color;	
 	}
 
-	public EColor getColor() {
-		return color;
-	}
 	
 	public void increaseMoveCount() {
 		moveCount++;
@@ -35,6 +32,11 @@ public abstract class ChessPiece extends Piece{
 	
 	protected boolean isThereOpponentPiece(Position position) {
 		ChessPiece p = (ChessPiece)getBoard().piece(position);
-		return p != null & p.getColor() != color;
+		return p != null && p.getColor() != color;
 	}
+	
+	public EColor getColor() {
+		return color;
+	}
+	
 }
