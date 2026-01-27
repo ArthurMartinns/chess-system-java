@@ -9,6 +9,7 @@ import boardgame.Piece;
 import boardgame.Position;
 import chess.pieces.Bishop;
 import chess.pieces.King;
+import chess.pieces.Knight;
 import chess.pieces.Pawn;
 import chess.pieces.Rook;
 
@@ -194,26 +195,36 @@ public class ChessMatch {
 	}
 
 	private void initialSetup() {
-		placeNewPiece('a', 1, new Rook(board, EColor.WHITE));
-		placeNewPiece('c', 1, new Bishop(board, EColor.WHITE));
-		placeNewPiece('e', 1, new King(board, EColor.WHITE));
-		placeNewPiece('f', 1, new Bishop(board, EColor.WHITE));
-		placeNewPiece('h', 1, new Rook(board, EColor.WHITE));
-		placeNewPiece('a', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('b', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('c', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('d', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('e', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('f', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('g', 2, new Pawn(board, EColor.WHITE));
-		placeNewPiece('h', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('a', 1, new Rook(board, EColor.WHITE));
+        placeNewPiece('b', 1, new Knight(board, EColor.WHITE));
+        placeNewPiece('c', 1, new Bishop(board, EColor.WHITE));
+        placeNewPiece('e', 1, new King(board, EColor.WHITE));
+        placeNewPiece('f', 1, new Bishop(board, EColor.WHITE));
+        placeNewPiece('g', 1, new Knight(board, EColor.WHITE));
+        placeNewPiece('h', 1, new Rook(board, EColor.WHITE));
+        placeNewPiece('a', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('b', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('c', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('d', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('e', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('f', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('g', 2, new Pawn(board, EColor.WHITE));
+        placeNewPiece('h', 2, new Pawn(board, EColor.WHITE));
 
-		placeNewPiece('a', 8, new Rook(board, EColor.BLACK));
-		placeNewPiece('c', 8, new Bishop(board, EColor.BLACK));
-		placeNewPiece('e', 8, new King(board, EColor.BLACK));
-		placeNewPiece('f', 8, new Bishop(board, EColor.BLACK));
-		placeNewPiece('h', 8, new Rook(board, EColor.BLACK));
-		placeNewPiece('a', 7, new Pawn(board, EColor.BLACK));
-		placeNewPiece('b', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('a', 8, new Rook(board, EColor.BLACK));
+        placeNewPiece('b', 8, new Knight(board, EColor.BLACK));
+        placeNewPiece('c', 8, new Bishop(board, EColor.BLACK));
+        placeNewPiece('e', 8, new King(board, EColor.BLACK));
+        placeNewPiece('f', 8, new Bishop(board, EColor.BLACK));
+        placeNewPiece('g', 8, new Knight(board, EColor.BLACK));
+        placeNewPiece('h', 8, new Rook(board, EColor.BLACK));
+        placeNewPiece('a', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('b', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('c', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('d', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('e', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('f', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('g', 7, new Pawn(board, EColor.BLACK));
+        placeNewPiece('h', 7, new Pawn(board, EColor.BLACK));
 	}
 }
